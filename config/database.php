@@ -6,16 +6,14 @@
  *
  */
 
-return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Pagination
-    |--------------------------------------------------------------------------
-    |
-    | This value gives, the maximum number of records a request can return
-    |
-    */
-    'pagination' => env('PAGINATION_LIMIT', 100),
-
+ return [
+    'connections' => [
+        'mssql' => [
+            'driver'    => 'sqlsrv',
+            'host'      => env('DB_HOST', '127.0.0.1'),
+            'database'  => env('DB_DATABASE', 'AccountDB'),
+            'username'  => env('DB_USERNAME', 'dbuser'),
+            'password'  => env('DB_PASSWORD', 'dbpass'),
+        ]
+    ]
 ];
