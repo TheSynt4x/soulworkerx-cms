@@ -13,13 +13,17 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 {
     use Authenticatable, Authorizable, HasFactory;
 
+    protected $connection = 'mssql';
+
+    protected $table = 'TB_ACCOUNT';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
+        'ACCOUNT_ID', 'PASSWORD',
     ];
 
     /**
@@ -28,6 +32,6 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
     protected $hidden = [
-        'password',
+        'PASSWORD',
     ];
 }
