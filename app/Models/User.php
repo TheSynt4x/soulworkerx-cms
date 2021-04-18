@@ -13,7 +13,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 {
     use Authenticatable, Authorizable, HasFactory;
 
-    protected $connection = 'mssql';
+    protected $connection = 'accounts';
 
     protected $table = 'TB_ACCOUNT';
 
