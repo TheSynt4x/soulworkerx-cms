@@ -39,6 +39,8 @@ class LoginController extends Controller
             return view('auth.login', ['error' => 'Incorrect password. Please try again.']);
         }
 
+        $request->session()->put('user', $user->ACCOUNT_ID);
+
         return redirect()->route('home');
     }
 }
