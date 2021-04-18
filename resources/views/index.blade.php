@@ -88,3 +88,10 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+<script>
+  var element = document.getElementById("home");
+  element.classList.add("active");
+</script>
+@endsection

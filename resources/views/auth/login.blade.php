@@ -41,3 +41,11 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+<script>
+  var element = document.getElementById("login");
+  element.classList.add("active");
+</script>
+@endsection
+

@@ -42,6 +42,8 @@
     <script src="{{ url('/') }}/assets/js/plugins.js"></script>
     <script src="{{ url('/') }}/assets/js/main.js"></script>
 
+    @yield('scripts')
+
 </body>
 
 </html>

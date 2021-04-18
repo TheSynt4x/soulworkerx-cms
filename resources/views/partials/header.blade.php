@@ -13,8 +13,8 @@
                 <div class="col-lg-6 col-12 order-md-3 order-lg-2 d-flex justify-content-center">
                     <nav class="main-menu menu-style-2">
                         <ul>
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href="#">Pages</a>
+                            <li id="home"><a href="{{ url('/') }}">Home</a></li>
+                            <li id="pages"><a href="#">Pages</a>
                                 <ul class="sub-menu">
                                     <li><a href="#">Top PVP Players</a></li>
                                 </ul>
@@ -31,8 +31,8 @@
                 <div class="col-12 col-md-9 order-md-2 order-lg-3 col-lg-3">
                     <div class="header-right-wrap">
                         <ul>
-                            <li class="active"><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li id="login"><a href="{{ route('login') }}">Login</a></li>
+                            <li id="register"><a href="{{ route('register') }}">Register</a></li>
                         </ul>
                     </div>
                 </div>

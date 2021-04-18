@@ -50,3 +50,10 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+<script>
+  var element = document.getElementById("register");
+  element.classList.add("active");
+</script>
+@endsection
