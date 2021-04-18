@@ -15,6 +15,9 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+
 Route::get('/login', ['as' => 'login', 'uses' => 'LoginController@index']);
+Route::post('/login', 'LoginController@store');
+
 Route::get('/register', ['as' => 'register', 'uses' => 'RegisterController@index']);
