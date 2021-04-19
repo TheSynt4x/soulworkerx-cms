@@ -8,17 +8,16 @@
                 <div class="col-md-12 col-12 d-flex justify-content-center">
                     <div class="gilbard-login">
 
-                        @if ($error)
-                            <div role="alert" class="alert alert-danger"> {{$error}}</div>
-                        @endif
+                        @include('partials.flash')
 
-                        <h3 class="mt-5">Login to your account</h3>
+                        <h3>Login to your account</h3>
                         <!-- Login Form -->
                         <form action="" method="POST">
                             <div class="row">
-                                <div class="col-12 mb-30"><input type="text"
-                                        placeholder="Type your username or email address" name="username"></div>
-                                <div class="col-12 mb-20"><input type="password" placeholder="Enter your passward" name="password"></div>
+                                <div class="col-12 mb-30"><input type="text" placeholder="Enter your username"
+                                        name="username"></div>
+                                <div class="col-12 mb-20"><input type="password" placeholder="Enter your passward"
+                                        name="password"></div>
                                 <div class="col-12 mb-15">
 
                                     <input type="checkbox" id="remember_me" name="remember_me">
@@ -30,6 +29,8 @@
                                 <div class="col-12"><input type="submit" value="LOGIN"></div>
 
                             </div>
+
+                            @csrf
                         </form>
                         <div class="col-12">
                             <h4>Don’t have account? please click <a class="text--primary"
@@ -47,9 +48,9 @@
 @endsection
 
 @section('scripts')
-<script>
-  var element = document.getElementById("login");
-  element.classList.add("active");
-</script>
-@endsection
+    <script>
+        var element = document.getElementById("login");
+        element.classList.add("active");
 
+    </script>
+@endsection

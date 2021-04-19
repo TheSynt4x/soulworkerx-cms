@@ -8,34 +8,67 @@
                 <div class="col-md-12 col-12 d-flex justify-content-center">
                     <div class="gilbard-login">
 
+                        @include('partials.flash')
+
                         <h3>Register</h3>
-                        <!-- Login Form -->
-                        <form action="#">
+
+                        <!-- Register Form -->
+                        <form action="#" method="POST">
                             <div class="row">
-                                <div class="col-12 mb-30">
-                                    <input type="text" placeholder="Type your username">
-                                </div>
+                                <div class="col-12 mb-20">
+                                    <input class="@error('username') form-control is-invalid @enderror" type="text"
+                                        placeholder="Enter your username" name="username" value="{{ old('username') }}">
 
-                                <div class="col-12 mb-30">
-                                    <input type="email" placeholder="Type your email">
+                                    @error('username')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+
                                 </div>
 
                                 <div class="col-12 mb-20">
-                                    <input type="password" placeholder="Enter your passward">
+                                    <input class="@error('password') form-control is-invalid @enderror" type="password"
+                                        placeholder="Enter your passward" name="password">
+
+                                    @error('password')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-12 mb-20">
-                                    <input type="password" placeholder="Confirm your password">
+                                    <input class="@error('confirm_password') form-control is-invalid @enderror"
+                                        type="password" placeholder="Confirm your password" name="confirm_password">
+
+                                    @error('confirm_password')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-12 mb-15">
-                                    <input type="checkbox" id="remember_me">
-                                    <label for="remember_me">I agree to the terms & conditions.</label>
-                                </div>
-                                <div class="col-12"><input type="submit" value="LOGIN"></div>
+                                    <input class="@error('password') form-control is-invalid @enderror" type="checkbox"
+                                        id="agree" name="agree">
+                                    <label for="agree">I agree to the terms & conditions.</label>
 
+                                    @error('agree')
+                                        <div class="invalid-feedback">
+                                            You must accept terms & conditions.
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="submit" value="Sign Up">
+                                </div>
                             </div>
+
+                            @csrf
                         </form>
+
                         <div class="col-12">
                             <h4>Already have an account? please click <a class="text--primary"
                                     href="{{ route('login') }}">Login</a>!
@@ -52,8 +85,9 @@
 @endsection
 
 @section('scripts')
-<script>
-  var element = document.getElementById("register");
-  element.classList.add("active");
-</script>
+    <script>
+        var element = document.getElementById("register");
+        element.classList.add("active");
+
+    </script>
 @endsection

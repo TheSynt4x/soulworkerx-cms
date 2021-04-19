@@ -190,6 +190,13 @@ img {
     max-width: 100%;
 }
 
+.alert {
+    position: relative !important;
+    padding: .75rem 1.25rem !important;;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
 /*--
     - Plugin CSS Customize
 -----------------------------------------*/
@@ -1312,6 +1319,18 @@ header.header.header-static {
     line-height: 30px;
     display: block;
     padding: 30px 0;
+    font-family: "Qanto";
+    color: #9f9f9f;
+}
+#login {
+    font-size: 20px;
+    line-height: 30px;
+    font-family: "Qanto";
+    color: #9f9f9f;
+}
+#register {
+    font-size: 20px;
+    line-height: 30px;
     font-family: "Qanto";
     color: #9f9f9f;
 }

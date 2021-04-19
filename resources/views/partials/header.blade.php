@@ -36,7 +36,7 @@
                                 <li id="login"><a href="{{ route('login') }}">Login</a></li>
                                 <li id="register"><a href="{{ route('register') }}">Register</a></li>
                             @else
-                                <li id="user"><a href="#">{{ request()->user()->ACCOUNT_ID }}</a>
+                                <li id="user"><a href="#">{{ request()->user()->ACCOUNT_ID ?? '' }}</a>
                                     <ul class="sub-menu" style="text-align: left;">
                                         <li><a href="#">change password</a></li>
                                         <li><a href="#">logout</a></li>
