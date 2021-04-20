@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Middleware\GuestMiddleware;
+use App\Http\Middleware\RedirectIfAuthenticated;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +13,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/login', 'LoginController@index')->name('login');
-Route::post('/login', 'LoginController@store');
-Route::get('/register', 'RegisterController@index')->name('register');
-Route::post('/register', 'RegisterController@store');
+
+Route::middleware([RedirectIfAuthenticated::class])->group(function () {
+    Route::get('/login', 'LoginController@index')->name('login');
+    Route::post('/login', 'LoginController@authenticate');
+    Route::get('/register', 'RegisterController@index')->name('register');
+    Route::post('/register', 'RegisterController@store');
+});
+
+Route::middleware([GuestMiddleware::class])->group(function () {
+    Route::get('/change-password', 'ChangePasswordController@index')->name('change-password');
+    Route::post('/change-password', 'ChangePasswordController@edit');
+
+    Route::get('/logout', 'LoginController@logout')->name('logout');
+});
+

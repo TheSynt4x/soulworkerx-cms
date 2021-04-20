@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 
 class LoginController extends Controller
 {
@@ -24,20 +25,26 @@ class LoginController extends Controller
      * @param Request $request
      * @return void
      */
-    public function store(Request $request)
+    public function authenticate(Request $request)
     {
         $user = User::where('ACCOUNT_ID', '=', $request->username)->first();
 
         if (!$user) {
-            return back()->with('info', 'No user found!');
+            return back()->with('info', __('messages.no_user'));
         }
 
         if (bin2hex($user->PASSWORD) !== sha1($request->password)) {
-            return back()->with('error', 'Incorrect password. Please try again.');
+            return back()->with('error', __('messages.incorrect_password'));
         }
 
         $request->session()->put('user', $user->ACCOUNT_ID);
 
-        return redirect()->route('home');
+        return redirect(RouteServiceProvider::HOME)->with('success', 'You have been logged in!');
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget('user');
+        return redirect(RouteServiceProvider::HOME)->with('info', __('messages.logged_out'));
     }
 }

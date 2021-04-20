@@ -37,7 +37,7 @@ class RegisterController extends Controller
         $user = User::where('ACCOUNT_ID', '=', $request->username)->first();
 
         if ($user) {
-            return back()->with('error', 'Username already taken!');
+            return back()->with('error', __('messages.username_taken'));
         }
 
         \DB::connection('accounts')->statement(
@@ -45,7 +45,7 @@ class RegisterController extends Controller
             [
                 ':account' => $request->username,
                 ':password' => $request->password,
-                ':ip' => 13370101,
+                ':ip' => ip2long($request->ip()),
                 ':mac' => '00-00-00-00-00-00',
                 ':login_sec' => 1,
                 ':channel_type' => 0,
@@ -59,6 +59,6 @@ class RegisterController extends Controller
             ]
         );
 
-        return redirect()->route('login')->with('success', 'You have been signed up! Please login.');
+        return redirect()->route('login')->with('success', __('messages.signed_up'));
     }
 }
