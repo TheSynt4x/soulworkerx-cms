@@ -10,17 +10,18 @@
 
                         @include('partials.flash')
 
-                        <h3>{{ __('messages.register_new_account') }}</h3>
+                        <h3>{{ __('messages.change_password') }}</h3>
 
-                        <!-- Register Form -->
-                        <form action="" method="POST">
+                        <p>{{__('messages.change_password_text')}}</p>
+
+                        <!-- Change password form -->
+                        <form action="#" method="POST">
                             <div class="row">
                                 <div class="col-12 mb-20">
-                                    <input class="@error('username') form-control is-invalid @enderror" type="text"
-                                        placeholder="{{ __('messages.enter_username') }}" name="username"
-                                        value="{{ old('username') }}">
+                                    <input class="@error('current_password') form-control is-invalid @enderror" type="text"
+                                        placeholder="{{ __('messages.enter_current_password') }}" name="current_password">
 
-                                    @error('username')
+                                    @error('current_password')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -29,10 +30,10 @@
                                 </div>
 
                                 <div class="col-12 mb-20">
-                                    <input class="@error('password') form-control is-invalid @enderror" type="password"
-                                        placeholder="{{ __('messages.enter_password') }}" name="password">
+                                    <input class="@error('new_password') form-control is-invalid @enderror" type="password"
+                                        placeholder="{{ __('messages.enter_new_password') }}" name="new_password">
 
-                                    @error('password')
+                                    @error('new_password')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -51,31 +52,13 @@
                                     @enderror
                                 </div>
 
-                                <div class="col-12 mb-15">
-                                    <input class="@error('password') form-control is-invalid @enderror" type="checkbox"
-                                        id="agree" name="agree">
-                                    <label for="agree">{{ __('messages.terms_and_conditions') }}</label>
-
-                                    @error('agree')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
                                 <div class="col-12">
-                                    <input type="submit" value="{{ __('messages.register') }}">
+                                    <input style="width: 200px;" type="submit" value="{{ __('messages.change_password') }}">
                                 </div>
                             </div>
 
                             @csrf
                         </form>
-
-                        <div class="col-12">
-                            <h4>{{ __('messages.already_has_account') }} <a class="text--primary"
-                                    href="{{ route('login') }}">{{ __('messages.login') }}</a>!
-                            </h4>
-                        </div>
                     </div>
 
                 </div>

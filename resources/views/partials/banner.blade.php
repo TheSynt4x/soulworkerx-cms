@@ -7,7 +7,7 @@
                         style="font-family: debug; color: white; font-size: 5rem; word-break: break-all; line-height: 0.8;">
                         SoulWorkerX</h1>
 
-                    <a class="df-btn" href="#">Download</a>
+                    <a class="df-btn" href="#">{{ __('messages.download') }}</a>
 
                 </div>
             </div>
