@@ -80,7 +80,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereTRADEPWCHECK($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereTRADEPWCHECKDATE($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUAID($value)
- * @mixin \Eloquent
  */
 	class User extends \Eloquent {}
 }

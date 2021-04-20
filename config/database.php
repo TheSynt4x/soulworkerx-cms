@@ -99,10 +99,10 @@ return [
             'password'  => 'dbpass',
         ],
 
-        'common' => [
+        'gm' => [
             'driver'    => 'sqlsrv',
             'host'      => '127.0.0.1',
-            'database'  => 'CommonDB',
+            'database'  => 'GMToolDB',
             'username'  =>  'dbuser',
             'password'  => 'dbpass',
         ],
