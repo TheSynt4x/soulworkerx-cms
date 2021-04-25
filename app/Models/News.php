@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    protected $connection = 'gm';
+    protected $connection = 'mysql';
 
-    protected $table = 'TB_NEWS';
+    protected $table = 'news';
 
     public $timestamps = false;
 
@@ -18,6 +18,6 @@ class News extends Model
      * @var array
      */
     protected $fillable = [
-        'ID', 'TITLE', 'TEXT', 'AUTHOR', 'DATE'
+        'id', 'title', 'text', 'author', 'date'
     ];
 }

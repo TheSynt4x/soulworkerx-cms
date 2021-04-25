@@ -26,9 +26,13 @@
 
     <div id="main-wrapper">
         @include('partials.header')
-        @include('partials.banner')
+
+        @hasSection('content')
+            @include('partials.banner')
+        @endif
 
         @yield('content')
+        @yield('custom-content')
 
         @include('partials.footer')
     </div>

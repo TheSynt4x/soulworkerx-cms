@@ -13,6 +13,7 @@ use App\Http\Middleware\RedirectIfAuthenticated;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::middleware([RedirectIfAuthenticated::class])->group(function () {
@@ -27,5 +28,9 @@ Route::middleware([GuestMiddleware::class])->group(function () {
     Route::post('/change-password', 'ChangePasswordController@edit');
 
     Route::get('/logout', 'LoginController@logout')->name('logout');
-});
 
+    Route::get('/store', 'PaymentController@index')->name('store');
+
+    Route::get('/payment', 'PaymentController@payWithpaypal')->name('payment');
+    Route::get('/payment/status', 'PaymentController@getPaymentStatus')->name('status');
+});

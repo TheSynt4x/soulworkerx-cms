@@ -24,24 +24,27 @@
                                     <li><a href="#">Discord</a></li>
                                 </ul>
                             </li>
+                            @if (request()->session()->get('user'))
+                                <li id="store"><a href="{{ route('store') }}">@lang('messages.store')</a></li>
+                            @endif
                         </ul>
                     </nav>
                 </div>
 
                 <div class="col-12 col-md-9 order-md-2 order-lg-3 col-lg-3">
                     <div class="header-right-wrap">
-                        <ul style="text-align: right;">
-                            @if (!request()->session()->get('user')))
-                                <li id="login"><a href="{{ route('login') }}">{{ __('messages.login') }}</a></li>
-                                <li id="register"><a
-                                        href="{{ route('register') }}">{{ __('messages.register') }}</a></li>
+                        <ul style="text-align: right; margin-right: 50px;">
+                            @if (!request()->session()->get('user'))
+                                <li id="login"><a href="{{ route('login') }}">@lang('messages.login')</a></li>
+                                <li id="register"><a href="{{ route('register') }}">@lang('messages.register')</a>
+                                </li>
                             @else
                                 <li id="user"><a href="#">{{ request()->user()->ACCOUNT_ID ?? '' }}</a>
                                     <ul class="sub-menu" style="text-align: left;">
                                         <li><a
-                                                href="{{ route('change-password') }}">{{ __('messages.change_password') }}</a>
+                                                href="{{ route('change-password') }}">@lang('messages.change_password')</a>
                                         </li>
-                                        <li><a href="{{ route('logout') }}">{{ __('messages.logout') }}</a></li>
+                                        <li><a href="{{ route('logout') }}">@lang('messages.logout')</a></li>
                                     </ul>
                                 </li>
                             @endif

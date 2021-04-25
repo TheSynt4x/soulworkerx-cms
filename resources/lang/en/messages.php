@@ -13,6 +13,8 @@ return [
     'change_password' => 'Change Password',
     'logout' => 'Logout',
 
+    'store' => 'Store',
+
     // Auth/login
     'enter_username' => 'Enter your username',
     'enter_password' => 'Enter your password',
@@ -42,4 +44,5 @@ return [
     'signed_up' =>  'You have been signed up! Please login.',
     'change_password_text' => 'It is recommended to have a strong password. If you suspect that someone other than you is on
     your account, immediately change passwords.',
+    'no_news' => 'There are no news at the moment. Please check in at another time for updates!'
 ];

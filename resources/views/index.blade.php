@@ -13,8 +13,8 @@
                     </div>
 
                     @if (!count($news))
-                        <div style="margin-bottom: 200px;">
-                            <h1>@lang('messages.no_news')</h1>
+                        <div style="margin-bottom: 240px;">
+                            <h3>@lang('messages.no_news')</h3>
                         </div>
                     @else
                         @foreach ($news as $post)
