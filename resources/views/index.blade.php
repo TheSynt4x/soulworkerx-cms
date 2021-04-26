@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2><span class="color-blue">{{ __('messages.news') }}</span></h2>
+                        <h2><span class="color-blue">@lang('messages.news')</span></h2>
                     </div>
 
                     @if (!count($news))

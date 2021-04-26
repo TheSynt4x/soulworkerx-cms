@@ -10,29 +10,29 @@
 
                         @include('partials.flash')
 
-                        <h3>{{ __('messages.login_to_account') }}</h3>
+                        <h3>@lang('messages.login_to_account')</h3>
                         <!-- Login Form -->
                         <form action="" method="POST">
                             <div class="row">
-                                <div class="col-12 mb-30"><input type="text"
-                                        placeholder="{{ __('messages.enter_username') }}" name="username"></div>
+                                <div class="col-12 mb-30"><input type="text" placeholder="@lang('messages.enter_username')"
+                                        name="username"></div>
                                 <div class="col-12 mb-20"><input type="password"
-                                        placeholder="{{ __('messages.enter_password') }}" name="password"></div>
+                                        placeholder="@lang('messages.enter_password')" name="password"></div>
                                 <div class="col-12 mb-15">
 
                                     <input type="checkbox" id="remember_me" name="remember_me">
-                                    <label for="remember_me">{{ __('messages.remember_me') }}</label>
+                                    <label for="remember_me">@lang('messages.remember_me')</label>
 
                                 </div>
-                                <div class="col-12"><input type="submit" value="{{ __('messages.login') }}"></div>
+                                <div class="col-12"><input type="submit" value="@lang('messages.login')"></div>
 
                             </div>
 
                             @csrf
                         </form>
                         <div class="col-12">
-                            <h4>{{ __('messages.no_account') }} <a class="text--primary"
-                                    href="{{ route('register') }}">{{ __('messages.register') }}</a>!
+                            <h4>@lang('messages.no_account') <a class="text--primary"
+                                    href="{{ route('register') }}">@lang('messages.register')</a>!
                             </h4>
                         </div>
                     </div>

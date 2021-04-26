@@ -13,13 +13,13 @@
                 <div class="col-lg-6 col-12 order-md-3 order-lg-2 d-flex justify-content-center">
                     <nav class="main-menu menu-style-2">
                         <ul>
-                            <li id="home"><a href="{{ url('/') }}">{{ __('messages.home') }}</a></li>
-                            <li id="pages"><a href="#">{{ __('messages.pages') }}</a>
+                            <li id="home"><a href="{{ url('/') }}">@lang('messages.home')</a></li>
+                            <li id="pages"><a href="#">@lang('messages.pages')</a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">{{ __('messages.rankings') }}</a></li>
+                                    <li><a href="#">@lang('messages.rankings')</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">{{ __('messages.community') }}</a>
+                            <li><a href="#">@lang('messages.community')</a>
                                 <ul class="sub-menu">
                                     <li><a href="#">Discord</a></li>
                                 </ul>
