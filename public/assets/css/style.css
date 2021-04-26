@@ -192,7 +192,7 @@ img {
 
 .alert {
     position: relative !important;
-    padding: .75rem 1.25rem !important;;
+    padding: 0.75rem 1.25rem !important;
     border: none !important;
     border-radius: 0 !important;
 }
@@ -1291,7 +1291,6 @@ header.header.header-static {
     max-width: 100%;
 }
 
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .header-right-wrap ul {
         text-align: center;
@@ -1318,7 +1317,6 @@ header.header.header-static {
     font-size: 20px;
     line-height: 30px;
     display: block;
-    padding: 30px 0;
     font-family: "Qanto";
     color: #9f9f9f;
 }
@@ -1335,12 +1333,12 @@ header.header.header-static {
     color: #9f9f9f;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .header-right-wrap ul li a {
+    #user {
         padding: 20px 0;
     }
 }
 @media only screen and (max-width: 767px) {
-    .header-right-wrap ul li a {
+    .header-right-wrap ul {
         padding: 20px 0;
     }
 }
@@ -1472,7 +1470,6 @@ header.header.header-static {
     line-height: 30px;
 }
 
-
 .menu-style-2 ul li a {
     line-height: 30px;
 }
@@ -1526,7 +1523,7 @@ header.header.header-static {
 .main-menu > ul > li:hover > a {
     color: #fff;
 }
-.header-right-wrap > ul > li.active > a{
+.header-right-wrap > ul > li.active > a {
     color: #fff;
 }
 .main-menu > ul > li:hover > .sub-menu {
@@ -1582,7 +1579,13 @@ header.header.header-static {
     left: 100%;
     right: auto;
 }
-.header-right-wrap > ul > li:last-child .sub-menu .sub-menu .sub-menu .sub-menu {
+.header-right-wrap
+    > ul
+    > li:last-child
+    .sub-menu
+    .sub-menu
+    .sub-menu
+    .sub-menu {
     left: auto;
     right: 100%;
 }
@@ -1590,12 +1593,15 @@ header.header.header-static {
     left: auto;
     right: 100%;
 }
-.header-right-wrap > ul > li:nth-last-child(-n + 3) .sub-menu .sub-menu .sub-menu {
+.header-right-wrap
+    > ul
+    > li:nth-last-child(-n + 3)
+    .sub-menu
+    .sub-menu
+    .sub-menu {
     left: 100%;
     right: auto;
 }
-
-
 
 /*-- Sub Menu --*/
 .sub-menu {
